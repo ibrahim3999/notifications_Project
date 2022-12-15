@@ -155,6 +155,15 @@ public class UndoableStringBuilder {
 
         return null;
     }
+
+    public Stack<String> getUndo() {
+        return undo.peek();
+    }
+
+    public void setUndo(String pushStr) {
+        this.undo.push(pushStr);
+    }
+
     /**
      * FILO (first in last out ) also @see <a  href="https://en.wikipedia.org/wiki/Stack_(abstract_data_type)"></a>
      * <br>
@@ -203,4 +212,5 @@ public class UndoableStringBuilder {
 
 
     }
+
 }
