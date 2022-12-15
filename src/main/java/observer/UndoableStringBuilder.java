@@ -4,7 +4,7 @@ import java.util.Stack;
  * This is a program (class) to undo the last word you type in your string,
  * even the first word you entered in your string with your own memory and many functions
  * like delete, add...
- * @author  ibrahim mjadly,naseem atrash
+ * @author  ibrahim mjadly
  * @version 11.2022
  */
 public class UndoableStringBuilder {
