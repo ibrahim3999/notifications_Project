@@ -1,7 +1,7 @@
 package observer;
 
-import java.util.EmptyStackException;
-import java.util.Stack;
+import java.util.*;
+
 /**
  * This is a program (class) to undo the last word you type in your string,
  * even the first word you entered in your string with your own memory and many functions
@@ -10,11 +10,12 @@ import java.util.Stack;
  * @version 11.2022
  */
 public class UndoableStringBuilder {
+
     /**
      *  Generic Stack String type also @see <a href="https://www.geeksforgeeks.org/stack-class-in-java"></a>
      * <br>
      * */
-    private Stack<String> undo=new Stack<>();
+    public Stack<String> undo=new Stack<>();
 
     /**@type StringBuilder */
     private static   StringBuilder stringBuilder;
@@ -192,3 +193,4 @@ public class UndoableStringBuilder {
     }
 
 }
+

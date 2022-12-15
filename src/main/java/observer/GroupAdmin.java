@@ -39,8 +39,10 @@ public class GroupAdmin implements Sender {
 
     @Override
     public void undo() {
-        situations.undo();
-        this.CM.update(situations);
+        /**
+        this.situations.undo();
+        CM.update(this.situations);
+         **/
     }
 
     public ArrayList<Member> getMembers() {
@@ -55,7 +57,6 @@ public class GroupAdmin implements Sender {
     public String toString() {
         return "GroupAdmin{" +
                 "situations=" + situations +
-                ", Members=" + Members +
                 '}';
     }
 }
