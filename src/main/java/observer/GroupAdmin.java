@@ -3,8 +3,13 @@ package observer;
 import java.util.ArrayList;
 
 public class GroupAdmin implements Sender {
-    private  static UndoableStringBuilder situations =new UndoableStringBuilder();
-    private ArrayList <Member>Members=new ArrayList<Member>();
+    private  UndoableStringBuilder situations ;
+    private ArrayList <ConcreteMember> Members;
+    public GroupAdmin()
+    {
+        this.situations =new UndoableStringBuilder();
+        this.Members=new ArrayList<Member>();
+    }
     @Override
     public void register(Member obj) {
         Members.add(obj);
@@ -33,5 +38,21 @@ public class GroupAdmin implements Sender {
     @Override
     public void undo() {
         situations.undo();
+    }
+
+    public ArrayList<ConcreteMember> getMembers() {
+        return Members;
+    }
+
+    public UndoableStringBuilder getSituations() {
+        return situations;
+    }
+
+    @Override
+    public String toString() {
+        return "GroupAdmin{" +
+                "situations=" + situations +
+                ", Members=" + Members +
+                '}';
     }
 }
