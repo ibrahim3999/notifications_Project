@@ -10,15 +10,14 @@ public class ConcreteMember implements Member{
     {
         this.situations=groupAdmin.getSituations();
         this.Members=groupAdmin.getMembers();
-
     }
     @Override
     public void update(UndoableStringBuilder usb) {
 
-     this.Members.forEach((M)->
-     {
-         M.situations.setUndo(usb.getUndo().toString());
-     }
-     );
+        this.Members.forEach((M)->
+                {
+                    M.situations.setUndo(usb.getUndo().toString());
+                }
+        );
     }
 }

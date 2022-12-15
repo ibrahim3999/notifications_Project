@@ -191,26 +191,4 @@ public class UndoableStringBuilder {
         this.stringBuilder = stringBuilder;
     }
 
-    public static void main(String[] args)  {
-
-        UndoableStringBuilder usb = new UndoableStringBuilder();
-
-        usb.append("aa bb cc dd ee") ;
-        usb.replace(3, 5, "eat") ;
-        System.out.println(usb) ;
-        usb.replace(2, 7, "eat") ;
-        System.out.println(usb) ;
-        usb.reverse();
-        System.out.println(usb) ;
-        System.out.println ();
-        usb.undo ();
-        System.out.println(usb) ;
-        usb.undo ();
-        System.out.println(usb) ;
-        usb.undo ();
-        System.out.println(usb) ;
-
-
-    }
-
 }
