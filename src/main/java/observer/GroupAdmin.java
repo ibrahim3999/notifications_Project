@@ -4,47 +4,46 @@ import java.util.ArrayList;
 
 public class GroupAdmin implements Sender {
     private  UndoableStringBuilder situations ;
-    private ArrayList <ConcreteMember> Members;
+    private ArrayList <Member> Members;
     private ConcreteMember CM;
     public GroupAdmin()
     {
         this.situations =new UndoableStringBuilder();
-        this.Members=new ArrayList<ConcreteMember>();
-        this.CM=new ConcreteMember();
+        this.Members=new ArrayList<Member>();
+        this.CM=new ConcreteMember(situations,Members);
     }
     @Override
     public void register(Member obj) {
-        Members.add((ConcreteMember)obj);
+        Members.add(obj);
     }
 
     @Override
     public void unregister(Member obj) {
-        Members.remove((ConcreteMember)obj);
+        Members.remove(obj);
     }
 
     @Override
     public void insert(int offset, String obj) {
-       CM.update(situations.insert(offset,obj));
-
+        this.CM.update(situations.insert(offset,obj));
     }
 
     @Override
     public void append(String obj) {
-        CM.update(situations.append(obj));
+        this.CM.update(situations.append(obj));
     }
 
     @Override
     public void delete(int start, int end) {
-        CM.update(situations.delete(start,end));
+        this.CM.update(situations.delete(start,end));
     }
 
     @Override
     public void undo() {
         situations.undo();
-        CM.update(situations.undo.peek());
+        this.CM.update(situations);
     }
 
-    public ArrayList<ConcreteMember> getMembers() {
+    public ArrayList<Member> getMembers() {
         return Members;
     }
 

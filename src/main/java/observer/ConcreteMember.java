@@ -5,27 +5,32 @@ import java.util.ArrayList;
 public class ConcreteMember implements Member{
 
     private UndoableStringBuilder situations;
-    private ArrayList<ConcreteMember> Members;
-    public ConcreteMember(GroupAdmin groupAdmin)
+    private ArrayList<Member> Members;
+    public ConcreteMember(UndoableStringBuilder  situations,ArrayList<Member> Members)
     {
-        this.situations=groupAdmin.getSituations();
-        this.Members=groupAdmin.getMembers();
+        this.situations=situations;
+        this.Members=Members;
     }
     @Override
     public void update(UndoableStringBuilder usb) {
 
         this.Members.forEach((M)->
                 {
-                    M.situations.setUndo(usb.getUndo().toString());
+                    if(M instanceof ConcreteMember)
+                    {
+                        ConcreteMember cm= (ConcreteMember) M;
+                        cm.situations.setUndo(usb.toString());
+                    }
                 }
         );
+
+
     }
 
     @Override
     public String toString() {
         return "ConcreteMember{" +
-                "situations=" + situations +
-                ", Members=" + Members +
-                '}';
+                "situations=" + situations +"}";
+
     }
 }
