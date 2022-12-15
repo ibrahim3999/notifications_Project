@@ -8,16 +8,16 @@ public class GroupAdmin implements Sender {
     public GroupAdmin()
     {
         this.situations =new UndoableStringBuilder();
-        this.Members=new ArrayList<Member>();
+        this.Members=new ArrayList<ConcreteMember>();
     }
     @Override
     public void register(Member obj) {
-        Members.add(obj);
+        Members.add((ConcreteMember)obj);
     }
 
     @Override
     public void unregister(Member obj) {
-        Members.remove(obj);
+        Members.remove((ConcreteMember)obj);
     }
 
     @Override

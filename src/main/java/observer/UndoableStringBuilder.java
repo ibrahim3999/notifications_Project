@@ -156,7 +156,7 @@ public class UndoableStringBuilder {
         return null;
     }
 
-    public Stack<String> getUndo() {
+    public String getUndo() {
         return undo.peek();
     }
 
