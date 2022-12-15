@@ -20,4 +20,12 @@ public class ConcreteMember implements Member{
                 }
         );
     }
+
+    @Override
+    public String toString() {
+        return "ConcreteMember{" +
+                "situations=" + situations +
+                ", Members=" + Members +
+                '}';
+    }
 }
