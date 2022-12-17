@@ -2,7 +2,9 @@ package observer;
 
 import java.util.ArrayList;
 
-public class GroupAdmin implements Sender {
+public class GroupAdmin   implements Sender
+{
+
     private  UndoableStringBuilder situations ;
     private ArrayList <Member> Members;
     private ConcreteMember CM;
@@ -10,7 +12,7 @@ public class GroupAdmin implements Sender {
     {
         this.situations =new UndoableStringBuilder();
         this.Members=new ArrayList<Member>();
-        this.CM=new ConcreteMember(situations,Members);
+        this.CM=new ConcreteMember(Members);
     }
     @Override
     public void register(Member obj) {
@@ -39,10 +41,8 @@ public class GroupAdmin implements Sender {
 
     @Override
     public void undo() {
-        /**
         this.situations.undo();
         CM.update(this.situations);
-         **/
     }
 
     public ArrayList<Member> getMembers() {
@@ -59,4 +59,14 @@ public class GroupAdmin implements Sender {
                 "situations=" + situations +
                 '}';
     }
+    public static void main(String[] args) {
+        UndoableStringBuilder situations=new UndoableStringBuilder();
+        situations.append("aa bb cc");
+        System.out.println(situations);
+        situations.append("dd");
+        System.out.println(situations);
+        situations.undo();
+        System.out.println(situations);
+    }
+
 }

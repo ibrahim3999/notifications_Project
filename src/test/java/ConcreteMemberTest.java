@@ -13,8 +13,8 @@ public class ConcreteMemberTest {
          */
         String expect1="ConcreteMember{situations=aa bb cc}";
         GroupAdmin GA=new GroupAdmin();
-        ConcreteMember CM1=new ConcreteMember(GA.getSituations(),GA.getMembers());
-        ConcreteMember CM2=new ConcreteMember(GA.getSituations(),GA.getMembers());
+        ConcreteMember CM1=new ConcreteMember(GA.getMembers());
+        ConcreteMember CM2=new ConcreteMember(GA.getMembers());
         GA.register(CM1);
         GA.register(CM2);
         GA.append("aa bb cc");

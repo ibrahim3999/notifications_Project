@@ -6,9 +6,9 @@ public class ConcreteMember implements Member{
 
     private UndoableStringBuilder situations;
     private ArrayList<Member> Members;
-    public ConcreteMember(UndoableStringBuilder  situations,ArrayList<Member> Members)
+    public ConcreteMember(ArrayList<Member> Members)
     {
-        this.situations=situations;
+        this.situations=new UndoableStringBuilder();
         this.Members=Members;
     }
     @Override

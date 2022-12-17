@@ -8,8 +8,8 @@ public class GroupAdminTest {
     public void unregister_registerTest()
     {
         GroupAdmin GA=new GroupAdmin();
-        ConcreteMember CM1=new ConcreteMember(GA.getSituations(),GA.getMembers());
-        ConcreteMember CM2=new ConcreteMember(GA.getSituations(),GA.getMembers());
+        ConcreteMember CM1=new ConcreteMember(GA.getMembers());
+        ConcreteMember CM2=new ConcreteMember(GA.getMembers());
         GA.register(CM1);
         Assertions.assertEquals(1,GA.getMembers().size());
         GA.register(CM2);
@@ -21,8 +21,8 @@ public class GroupAdminTest {
     @Test
     public void insertTest(){
         GroupAdmin GA=new GroupAdmin();
-        ConcreteMember CM1=new ConcreteMember(GA.getSituations(),GA.getMembers());
-        ConcreteMember CM2=new ConcreteMember(GA.getSituations(),GA.getMembers());
+        ConcreteMember CM1=new ConcreteMember(GA.getMembers());
+        ConcreteMember CM2=new ConcreteMember(GA.getMembers());
         GA.register(CM1);
         GA.register(CM2);
         GA.append("aa bb cc");
@@ -39,8 +39,8 @@ public class GroupAdminTest {
     public void appendTest()
     {
         GroupAdmin GA=new GroupAdmin();
-        ConcreteMember CM1=new ConcreteMember(GA.getSituations(),GA.getMembers());
-        ConcreteMember CM2=new ConcreteMember(GA.getSituations(),GA.getMembers());
+        ConcreteMember CM1=new ConcreteMember(GA.getMembers());
+        ConcreteMember CM2=new ConcreteMember(GA.getMembers());
         GA.register(CM1);
         GA.register(CM2);
         GA.append("aa bb cc");
@@ -58,8 +58,8 @@ public class GroupAdminTest {
     public void deleteTest()
     {
         GroupAdmin GA=new GroupAdmin();
-        ConcreteMember CM1=new ConcreteMember(GA.getSituations(),GA.getMembers());
-        ConcreteMember CM2=new ConcreteMember(GA.getSituations(),GA.getMembers());
+        ConcreteMember CM1=new ConcreteMember(GA.getMembers());
+        ConcreteMember CM2=new ConcreteMember(GA.getMembers());
         GA.register(CM1);
         GA.register(CM2);
         GA.append("aa bb cc");
@@ -72,13 +72,14 @@ public class GroupAdminTest {
             }
         });
     }
+
     @Test
     public void undoTest()
     {
-        /**
+
         GroupAdmin GA=new GroupAdmin();
-        ConcreteMember CM1=new ConcreteMember(GA.getSituations(),GA.getMembers());
-        ConcreteMember CM2=new ConcreteMember(GA.getSituations(),GA.getMembers());
+        ConcreteMember CM1=new ConcreteMember(GA.getMembers());
+        ConcreteMember CM2=new ConcreteMember(GA.getMembers());
         GA.register(CM1);
         GA.register(CM2);
         GA.append("aa bb cc");
@@ -86,13 +87,19 @@ public class GroupAdminTest {
         GA.undo();
         GA.getMembers().forEach((M)->{
             if(M instanceof ConcreteMember)
-            {
-                ConcreteMember C=(ConcreteMember)M;
-                System.out.println(C.toString());
-                //Assertions.assertEquals("ConcreteMember{situations=aa bb cc}",C.toString());
+            {ConcreteMember C=(ConcreteMember)M;
+               Assertions.assertEquals("ConcreteMember{situations=aa bb cc}",C.toString());
             }
         });
-         **/
+        GA.undo();
+        // throw Exeption type-> EmptyStackExeption
+        GA.getMembers().forEach((M)->{
+            if(M instanceof ConcreteMember)
+            {ConcreteMember C=(ConcreteMember)M;
+                Assertions.assertEquals("ConcreteMember{situations=null}",C.toString());
+            }
+        });
+
     }
 
 }
