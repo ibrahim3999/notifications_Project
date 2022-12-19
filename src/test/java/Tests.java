@@ -1,3 +1,5 @@
+import observer.ConcreteMember;
+import observer.GroupAdmin;
 import org.junit.jupiter.api.Test;
 import org.junit.platform.commons.logging.Logger;
 import org.junit.platform.commons.logging.LoggerFactory;
@@ -7,15 +9,12 @@ public class Tests {
     // stub method to check external dependencies compatibility
     @Test
     public void test(){
-        String s1 = "Alice";
-        String s2 = "Bob";
+        GroupAdmin GA=new GroupAdmin();
+        ConcreteMember CM=new ConcreteMember(GA.getMembers());
+        //logger.info(()->JvmUtilities.objectFootprint(GA));
+        logger.info(()->JvmUtilities.objectTotalSize(GA,CM));
+        //logger.info(()->JvmUtilities.objectTotalSize(CM));
 
-        logger.info(()->JvmUtilities.objectFootprint(s1));
-
-        logger.info(()->JvmUtilities.objectFootprint(s1,s2));
-
-        logger.info(()->JvmUtilities.objectTotalSize(s1));
-
-        logger.info(() -> JvmUtilities.jvmInfo());
+        //logger.info(() -> JvmUtilities.jvmInfo());
     }
 }

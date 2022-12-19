@@ -1,8 +1,10 @@
 package observer;
 
+import api.Member;
+
 import java.util.ArrayList;
 
-public class ConcreteMember implements Member{
+public class ConcreteMember   implements Member {
 
     private UndoableStringBuilder situations;
     private ArrayList<Member> Members;
@@ -11,9 +13,13 @@ public class ConcreteMember implements Member{
         this.situations=new UndoableStringBuilder();
         this.Members=Members;
     }
+    public ConcreteMember(ConcreteMember CM)
+    {
+        this.Members=CM.Members;
+        this.situations=CM.situations;
+    }
     @Override
     public void update(UndoableStringBuilder usb) {
-
         this.Members.forEach((M)->
                 {
                     if(M instanceof ConcreteMember)
@@ -23,8 +29,6 @@ public class ConcreteMember implements Member{
                     }
                 }
         );
-
-
     }
 
     @Override

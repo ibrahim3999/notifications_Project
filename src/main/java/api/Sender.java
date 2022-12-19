@@ -1,4 +1,4 @@
-package observer;
+package api;
 
 public interface Sender {
     //methods to register and unregister observers

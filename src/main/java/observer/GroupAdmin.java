@@ -1,19 +1,23 @@
 package observer;
 
+import api.Member;
+import api.Sender;
+
 import java.util.ArrayList;
 
-public class GroupAdmin   implements Sender
-{
+public class GroupAdmin  implements Sender {
 
     private  UndoableStringBuilder situations ;
     private ArrayList <Member> Members;
     private ConcreteMember CM;
+
     public GroupAdmin()
     {
         this.situations =new UndoableStringBuilder();
         this.Members=new ArrayList<Member>();
         this.CM=new ConcreteMember(Members);
     }
+
     @Override
     public void register(Member obj) {
         Members.add(obj);
@@ -52,13 +56,13 @@ public class GroupAdmin   implements Sender
     public UndoableStringBuilder getSituations() {
         return situations;
     }
-
     @Override
     public String toString() {
         return "GroupAdmin{" +
                 "situations=" + situations +
                 '}';
     }
+    /**
     public static void main(String[] args) {
         UndoableStringBuilder situations=new UndoableStringBuilder();
         situations.append("aa bb cc");
@@ -68,5 +72,7 @@ public class GroupAdmin   implements Sender
         situations.undo();
         System.out.println(situations);
     }
+     */
+
 
 }
