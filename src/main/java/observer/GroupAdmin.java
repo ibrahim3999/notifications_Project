@@ -7,15 +7,14 @@ import java.util.ArrayList;
 
 public class GroupAdmin  implements Sender {
 
-    private  UndoableStringBuilder situations ;
+    private    UndoableStringBuilder situations ;
     private ArrayList <Member> Members;
-    private ConcreteMember CM;
 
     public GroupAdmin()
     {
         this.situations =new UndoableStringBuilder();
         this.Members=new ArrayList<Member>();
-        this.CM=new ConcreteMember(Members);
+       // this.CM=new ConcreteMember(Members);
     }
 
     @Override
@@ -30,25 +29,36 @@ public class GroupAdmin  implements Sender {
 
     @Override
     public void insert(int offset, String obj) {
-        this.CM.update(situations.insert(offset,obj));
+       this.situations.insert(offset,obj);
+       update();
     }
 
     @Override
     public void append(String obj) {
-        this.CM.update(situations.append(obj));
+        this.situations.append(obj);
+        update();
     }
 
     @Override
     public void delete(int start, int end) {
-        this.CM.update(situations.delete(start,end));
+        this.situations.delete(start,end);
+        update();
     }
 
     @Override
     public void undo() {
         this.situations.undo();
-        CM.update(this.situations);
+        update();
     }
+    public void update()
+    {
+        this.Members.forEach((M)->
+                {
+                    M.update(this.situations);
+                }
+        );
 
+    }
     public ArrayList<Member> getMembers() {
         return Members;
     }
@@ -56,23 +66,22 @@ public class GroupAdmin  implements Sender {
     public UndoableStringBuilder getSituations() {
         return situations;
     }
+
     @Override
     public String toString() {
         return "GroupAdmin{" +
                 "situations=" + situations +
                 '}';
     }
-    /**
-    public static void main(String[] args) {
-        UndoableStringBuilder situations=new UndoableStringBuilder();
-        situations.append("aa bb cc");
-        System.out.println(situations);
-        situations.append("dd");
-        System.out.println(situations);
-        situations.undo();
-        System.out.println(situations);
-    }
-     */
 
+    public static void main(String[] args) {
+      GroupAdmin GA=new GroupAdmin();
+      ConcreteMember CM1=new ConcreteMember();
+      ConcreteMember CM2=new ConcreteMember();
+      GA.register(CM1);
+      GA.register(CM2);
+      GA.append("aaa");
+      System.out.println(CM2.getSituations());
+    }
 
 }

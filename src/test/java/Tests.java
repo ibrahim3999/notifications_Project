@@ -10,11 +10,13 @@ public class Tests {
     @Test
     public void test(){
         GroupAdmin GA=new GroupAdmin();
-        ConcreteMember CM=new ConcreteMember(GA.getMembers());
-        //logger.info(()->JvmUtilities.objectFootprint(GA));
+        ConcreteMember CM=new ConcreteMember();
+        GA.register(CM);
+        logger.info(()->JvmUtilities.objectTotalSize(GA));
         logger.info(()->JvmUtilities.objectTotalSize(GA,CM));
-        //logger.info(()->JvmUtilities.objectTotalSize(CM));
+        logger.info(()->JvmUtilities.objectTotalSize(CM));
 
         //logger.info(() -> JvmUtilities.jvmInfo());
     }
 }
+

@@ -1,4 +1,4 @@
-import observer.ConcreteMember;
+/*import observer.ConcreteMember;
 import observer.GroupAdmin;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
@@ -8,9 +8,7 @@ public class ConcreteMemberTest {
     @Test
     public void updateTest()
     {
-        /**
-         *expected answer *
-         */
+
         String expect1="ConcreteMember{situations=aa bb cc}";
         GroupAdmin GA=new GroupAdmin();
         ConcreteMember CM1=new ConcreteMember(GA.getMembers());
@@ -41,3 +39,4 @@ public class ConcreteMemberTest {
 
     }
 }
+*/
