@@ -4,12 +4,12 @@ import api.Member;
 
 import java.util.ArrayList;
 
-public class ConcreteMember   implements Member {
+public class ConcreteMember    extends GroupAdmin implements Member {
     private UndoableStringBuilder situations;
 
     public ConcreteMember()
     {
-        this.situations=new UndoableStringBuilder();
+        this.situations=super.getSituations();
     }
     @Override
     public void update(UndoableStringBuilder usb) {
