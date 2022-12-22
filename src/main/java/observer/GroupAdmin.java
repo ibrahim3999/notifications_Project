@@ -1,8 +1,14 @@
 package observer;
-
 import api.Member;
 import api.Sender;
-
+/**
+ * @author  ibrahim ,Tair
+        * @version 12.2022
+ * A class that implements the Sender interface
+ * is an allowance for managing undoStringBuilder
+ * that operates on design patterns observer and manages updates
+ *
+ * */
 import java.util.ArrayList;
 
 public class GroupAdmin  implements Sender {
@@ -17,39 +23,64 @@ public class GroupAdmin  implements Sender {
        // this.CM=new ConcreteMember(Members);
     }
 
+    /**
+     * register member
+     * */
     @Override
     public void register(Member obj) {
         Members.add(obj);
     }
-
+    /**
+     * unregister member
+     * */
     @Override
     public void unregister(Member obj) {
         Members.remove(obj);
     }
 
     @Override
+    /**
+     * @param offset number index
+     * @param obj
+     * insert obj into String
+     * */
     public void insert(int offset, String obj) {
        this.situations.insert(offset,obj);
        update();
     }
 
+    /**
+     * @param obj
+     * append obj String
+     * */
     @Override
     public void append(String obj) {
         this.situations.append(obj);
         update();
     }
 
+    /**
+     * @param start
+     * @param end
+     * delete [start,end]
+     * */
     @Override
     public void delete(int start, int end) {
         this.situations.delete(start,end);
         update();
     }
 
+    /**
+     * undo Last update
+     * */
     @Override
     public void undo() {
         this.situations.undo();
         update();
     }
+    /**
+     * update every change on undoableStringBuilder
+     * */
     public void update()
     {
         this.Members.forEach((M)->
