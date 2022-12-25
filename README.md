@@ -1,5 +1,6 @@
 ![](https://media.tenor.com/cF4jU_6_CnUAAAAi/piggy-regret.gif)
 
+
 # Undo Project
 
 The project implements above group admin that updates
@@ -26,6 +27,12 @@ Delete and Append Methods.
 
 - [Methods](https://github.com/ibrahim3999/Ex1_oop/blob/main/src/main/java/observer/GroupAdmin.java)
 
+```
+Group Admin & Concrete Member
+Both of these use observer design patterns :)
+```
+
+
 ### Concrete Member
 A class that implements the Member Interface and extends Group Admin also include update platform
 for any changes in the Group Admin.
@@ -37,3 +44,17 @@ Class that include A stack Memory (without limit) for any change
  in the message.
 
 - [Allocate Memory for Changes](https://github.com/ibrahim3999/Ex1_oop/blob/main/src/main/java/observer/UndoableStringBuilder.java)
+
+## Run project
+
+Clone the project
+
+```bash
+  link clone https://github.com/ibrahim3999/Ex1_oop
+```
+
+
+
+## 🚀 About Us
+We are Computer Science Students in Ariel University
+
