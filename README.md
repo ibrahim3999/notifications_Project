@@ -1,8 +1,7 @@
 ![](https://media.tenor.com/cF4jU_6_CnUAAAAi/piggy-regret.gif)
 
 
-# Undo Project![notifications_Project-main-UML-DIAGRAM](https://user-images.githubusercontent.com/73761096/209674232-84d0fdde-28d4-4e69-8981-6fda48ec796b.png)
-
+![notifications_Project-main-UML-DIAGRAM-UPDATE](https://user-images.githubusercontent.com/73761096/209674332-01fd5e6a-7a09-4f72-b84e-8df62023e8db.png)
 
 The project implements above group admin that updates
 platform of messages for group members.
