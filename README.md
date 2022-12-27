@@ -1,8 +1,9 @@
 ![](https://media.tenor.com/cF4jU_6_CnUAAAAi/piggy-regret.gif)
 
 
-![notifications_Project-main-UML-DIAGRAM-UPDATE](https://user-images.githubusercontent.com/73761096/209674332-01fd5e6a-7a09-4f72-b84e-8df62023e8db.png)
+![notifications_Project-main-UML-DIAGRAM](https://user-images.githubusercontent.com/73761096/209674671-2561fbae-cad1-4e2a-af34-9db182ebb747.png)
 
+# UNDO PROJECT
 The project implements above group admin that updates
 platform of messages for group members.
 
