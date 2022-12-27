@@ -1,7 +1,6 @@
 ![](https://media.tenor.com/cF4jU_6_CnUAAAAi/piggy-regret.gif)
 
 
-![notifications_Project-main-UML-DIAGRAM](https://user-images.githubusercontent.com/73761096/209674671-2561fbae-cad1-4e2a-af34-9db182ebb747.png)
 
 # UNDO PROJECT
 The project implements above group admin that updates
@@ -45,7 +44,8 @@ Class that include A stack Memory (without limit) for any change
  in the message.
 
 - [Allocate Memory for Changes](https://github.com/ibrahim3999/Ex1_oop/blob/main/src/main/java/observer/UndoableStringBuilder.java)
-
+## UML 
+![notifications_Project-main-UML-DIAGRAM](https://user-images.githubusercontent.com/73761096/209674671-2561fbae-cad1-4e2a-af34-9db182ebb747.png)
 ## Run project
 
 Clone the project
