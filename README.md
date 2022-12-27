@@ -23,7 +23,7 @@ platform of messages for group members.
  
 ### Group Admin
 A class that implements the Sender Interface also include Insert,
-Delete and Append Methods.
+Delete , Append and Undo Methods.
 
 - [Methods](https://github.com/ibrahim3999/Ex1_oop/blob/main/src/main/java/observer/GroupAdmin.java)
 
