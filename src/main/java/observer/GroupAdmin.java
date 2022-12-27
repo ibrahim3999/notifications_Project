@@ -10,6 +10,7 @@ import api.Sender;
  *
  * */
 import java.util.ArrayList;
+import java.util.EmptyStackException;
 
 public class GroupAdmin  implements Sender {
 
@@ -20,7 +21,6 @@ public class GroupAdmin  implements Sender {
     {
         this.situations =new UndoableStringBuilder();
         this.Members=new ArrayList<Member>();
-       // this.CM=new ConcreteMember(Members);
     }
 
     /**
@@ -74,14 +74,14 @@ public class GroupAdmin  implements Sender {
      * undo Last update
      * */
     @Override
-    public void undo() {
+    public void undo()throws EmptyStackException {
         this.situations.undo();
         update();
     }
     /**
      * update every change on undoableStringBuilder
      * */
-    public void update()
+    public void update()throws EmptyStackException
     {
         this.Members.forEach((M)->
                 {
@@ -112,6 +112,7 @@ public class GroupAdmin  implements Sender {
       GA.register(CM1);
       GA.register(CM2);
       GA.append("aaa");
+      GA.append("bb");
       System.out.println(CM2.getSituations());
     }
 

@@ -3,6 +3,7 @@ package observer;
 import api.Member;
 
 import java.util.ArrayList;
+import java.util.EmptyStackException;
 
 public class ConcreteMember    extends GroupAdmin implements Member {
     private UndoableStringBuilder situations;
@@ -10,12 +11,17 @@ public class ConcreteMember    extends GroupAdmin implements Member {
     public ConcreteMember()
     {
         this.situations=super.getSituations();
+
     }
+   /**
+    * @param usb type(UndoableStringBuilder
+    *            update for this.ConcreteMember
+    * */
     @Override
-    public void update(UndoableStringBuilder usb) {
+    public void update(UndoableStringBuilder usb)throws EmptyStackException {
       this.situations.setUndo(usb.getUndo());
     }
-
+//getter
     public UndoableStringBuilder getSituations() {
         return situations;
     }

@@ -1,4 +1,4 @@
-/*import observer.ConcreteMember;
+import observer.ConcreteMember;
 import observer.GroupAdmin;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
@@ -11,8 +11,8 @@ public class ConcreteMemberTest {
 
         String expect1="ConcreteMember{situations=aa bb cc}";
         GroupAdmin GA=new GroupAdmin();
-        ConcreteMember CM1=new ConcreteMember(GA.getMembers());
-        ConcreteMember CM2=new ConcreteMember(GA.getMembers());
+        ConcreteMember CM1=new ConcreteMember();
+        ConcreteMember CM2=new ConcreteMember();
         GA.register(CM1);
         GA.register(CM2);
         GA.append("aa bb cc");
@@ -39,4 +39,3 @@ public class ConcreteMemberTest {
 
     }
 }
-*/
