@@ -50,7 +50,7 @@ Class that include A stack Memory (without limit) for any change
 Clone the project
 
 ```bash
-  link clone https://github.com/ibrahim3999/Ex1_oop
+  link clone https://github.com/ibrahim3999/notifications_Project.git
 ```
 
 
