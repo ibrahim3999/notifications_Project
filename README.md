@@ -2,7 +2,7 @@
 
 
 
-# UNDO PROJECT
+# notifications_Project
 The project implements above group admin that updates
 platform of messages for group members.
 
