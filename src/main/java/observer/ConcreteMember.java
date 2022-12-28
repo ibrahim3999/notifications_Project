@@ -5,13 +5,12 @@ import api.Member;
 import java.util.ArrayList;
 import java.util.EmptyStackException;
 
-public class ConcreteMember    extends GroupAdmin implements Member {
+public class ConcreteMember     implements Member {
     private UndoableStringBuilder situations;
-
-    public ConcreteMember()
+    //shallow copy
+    public ConcreteMember(GroupAdmin GA)
     {
-        this.situations=super.getSituations();
-
+            this.situations=GA.getSituations();
     }
    /**
     * @param usb type(UndoableStringBuilder

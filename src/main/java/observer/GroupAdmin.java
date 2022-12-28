@@ -106,14 +106,16 @@ public class GroupAdmin  implements Sender {
     }
 
     public static void main(String[] args) {
+        /**
       GroupAdmin GA=new GroupAdmin();
-      ConcreteMember CM1=new ConcreteMember();
-      ConcreteMember CM2=new ConcreteMember();
+      ConcreteMember CM1=new ConcreteMember(GA);
+      ConcreteMember CM2=new ConcreteMember(GA);
       GA.register(CM1);
       GA.register(CM2);
       GA.append("aaa");
       GA.append("bb");
       System.out.println(CM2.getSituations());
+         **/
     }
 
 }

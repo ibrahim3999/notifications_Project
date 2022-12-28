@@ -18,7 +18,7 @@ public class UndoableStringBuilder {
     protected Stack<String> undo=new Stack<>();
 
     /**@type StringBuilder */
-    private static   StringBuilder stringBuilder;
+    private    StringBuilder stringBuilder;
 
     public UndoableStringBuilder()
     {

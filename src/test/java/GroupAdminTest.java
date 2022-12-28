@@ -1,3 +1,4 @@
+
 import observer.ConcreteMember;
 import observer.GroupAdmin;
 import org.junit.jupiter.api.Assertions;
@@ -10,8 +11,8 @@ public class GroupAdminTest {
     public void unregister_registerTest()
     {
         GroupAdmin GA=new GroupAdmin();
-        ConcreteMember CM1=new ConcreteMember();
-        ConcreteMember CM2=new ConcreteMember();
+        ConcreteMember CM1=new ConcreteMember(GA);
+        ConcreteMember CM2=new ConcreteMember(GA);
         GA.register(CM1);
         Assertions.assertEquals(1,GA.getMembers().size());
         GA.register(CM2);
@@ -23,8 +24,8 @@ public class GroupAdminTest {
     @Test
     public void insertTest(){
         GroupAdmin GA=new GroupAdmin();
-        ConcreteMember CM1=new ConcreteMember();
-        ConcreteMember CM2=new ConcreteMember();
+        ConcreteMember CM1=new ConcreteMember(GA);
+        ConcreteMember CM2=new ConcreteMember(GA);
         GA.register(CM1);
         GA.register(CM2);
         GA.append("aa bb cc");
@@ -41,8 +42,8 @@ public class GroupAdminTest {
     public void appendTest()
     {
         GroupAdmin GA=new GroupAdmin();
-        ConcreteMember CM1=new ConcreteMember();
-        ConcreteMember CM2=new ConcreteMember();
+        ConcreteMember CM1=new ConcreteMember(GA);
+        ConcreteMember CM2=new ConcreteMember(GA);
         GA.register(CM1);
         GA.register(CM2);
         GA.append("aa bb cc");
@@ -60,8 +61,8 @@ public class GroupAdminTest {
     public void deleteTest()
     {
         GroupAdmin GA=new GroupAdmin();
-        ConcreteMember CM1=new ConcreteMember();
-        ConcreteMember CM2=new ConcreteMember();
+        ConcreteMember CM1=new ConcreteMember(GA);
+        ConcreteMember CM2=new ConcreteMember(GA);
         GA.register(CM1);
         GA.register(CM2);
         GA.append("aa bb cc");
@@ -80,8 +81,8 @@ public class GroupAdminTest {
     {
 
         GroupAdmin GA=new GroupAdmin();
-        ConcreteMember CM1=new ConcreteMember();
-        ConcreteMember CM2=new ConcreteMember();
+        ConcreteMember CM1=new ConcreteMember(GA);
+        ConcreteMember CM2=new ConcreteMember(GA);
         GA.register(CM1);
         GA.register(CM2);
         GA.append("aa bb cc");

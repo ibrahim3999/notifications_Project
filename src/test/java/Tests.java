@@ -13,12 +13,12 @@ public class Tests {
     @Test
     public void test(){
         GroupAdmin GA=new GroupAdmin();
-        ConcreteMember CM1=new ConcreteMember();
-        ConcreteMember CM2=new ConcreteMember();
-        ConcreteMember CM3=new ConcreteMember();
+         ConcreteMember CM1=new ConcreteMember(GA);
+        ConcreteMember CM2=new ConcreteMember(GA);
+       // ConcreteMember CM3=new ConcreteMember();
         GA.register(CM1);
-        GA.register(CM2);
-        GA.register(CM3);
+       // GA.register(CM2);
+       // GA.register(CM3);
         /*
         LinkedList l=new LinkedList<>();
         l.add(CM1);
@@ -30,8 +30,8 @@ public class Tests {
         HashMap h=new HashMap<>();
         h.put(0,CM1);
 */
-        //logger.info(()->JvmUtilities.objectTotalSize(GA));
-        //logger.info(()->JvmUtilities.objectFootprint(GA));
+        logger.info(()->JvmUtilities.objectTotalSize(GA));
+        logger.info(()->JvmUtilities.objectTotalSize(CM1));
         /*
         logger.info(()->JvmUtilities.objectTotalSize(l));
         logger.info(()->JvmUtilities.objectTotalSize(a));
