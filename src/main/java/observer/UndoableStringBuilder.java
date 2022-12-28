@@ -15,7 +15,7 @@ public class UndoableStringBuilder {
      *  Generic Stack String type also @see <a href="https://www.geeksforgeeks.org/stack-class-in-java"></a>
      * <br>
      * */
-    protected Stack<String> undo=new Stack<>();
+    public Stack<String> undo=new Stack<>();
 
     /**@type StringBuilder */
     private    StringBuilder stringBuilder;
@@ -175,6 +175,7 @@ public class UndoableStringBuilder {
     {
         try {
             this.undo.pop();
+           // System.out.println(undo);
         }
         catch (EmptyStackException e)
         {

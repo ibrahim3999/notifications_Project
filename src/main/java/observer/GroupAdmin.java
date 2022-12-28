@@ -14,7 +14,7 @@ import java.util.EmptyStackException;
 
 public class GroupAdmin  implements Sender {
 
-    private    UndoableStringBuilder situations ;
+    private UndoableStringBuilder situations ;
     private ArrayList <Member> Members;
 
     public GroupAdmin()
@@ -46,7 +46,6 @@ public class GroupAdmin  implements Sender {
      * */
     public void insert(int offset, String obj) {
        this.situations.insert(offset,obj);
-       update();
     }
 
     /**
@@ -56,7 +55,6 @@ public class GroupAdmin  implements Sender {
     @Override
     public void append(String obj) {
         this.situations.append(obj);
-        update();
     }
 
     /**
@@ -67,7 +65,7 @@ public class GroupAdmin  implements Sender {
     @Override
     public void delete(int start, int end) {
         this.situations.delete(start,end);
-        update();
+
     }
 
     /**
@@ -76,20 +74,9 @@ public class GroupAdmin  implements Sender {
     @Override
     public void undo()throws EmptyStackException {
         this.situations.undo();
-        update();
     }
-    /**
-     * update every change on undoableStringBuilder
-     * */
-    public void update()throws EmptyStackException
-    {
-        this.Members.forEach((M)->
-                {
-                    M.update(this.situations);
-                }
-        );
 
-    }
+
     public ArrayList<Member> getMembers() {
         return Members;
     }
@@ -106,16 +93,20 @@ public class GroupAdmin  implements Sender {
     }
 
     public static void main(String[] args) {
-        /**
+/*
       GroupAdmin GA=new GroupAdmin();
       ConcreteMember CM1=new ConcreteMember(GA);
       ConcreteMember CM2=new ConcreteMember(GA);
       GA.register(CM1);
       GA.register(CM2);
       GA.append("aaa");
-      GA.append("bb");
+      GA.append("123");
+      GA.append("777");
+      GA.undo();
+      System.out.println(GA);
+      System.out.println(CM1.getSituations());
       System.out.println(CM2.getSituations());
-         **/
+*/
     }
 
 }

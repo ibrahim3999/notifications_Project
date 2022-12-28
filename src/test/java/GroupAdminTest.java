@@ -87,13 +87,17 @@ public class GroupAdminTest {
         GA.register(CM2);
         GA.append("aa bb cc");
         GA.append("XXX");
+
         GA.undo();
+
         GA.getMembers().forEach((M)->{
             if(M instanceof ConcreteMember)
             {ConcreteMember C=(ConcreteMember)M;
                Assertions.assertEquals("ConcreteMember{situations=aa bb cc}",C.toString());
             }
         });
+
+
 
     }
 
